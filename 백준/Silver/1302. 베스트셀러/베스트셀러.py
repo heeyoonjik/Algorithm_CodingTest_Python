@@ -1,12 +1,15 @@
-soldBookList = dict()
+soldBooks = dict()
 
 for _ in range(int(input())):
-  inputBook = input()
-  if(inputBook in soldBookList):
-    soldBookList[inputBook] = soldBookList[inputBook] + 1
+  bookname = input()
+  if bookname in soldBooks:
+    soldBooks[bookname] += 1
   else:
-    soldBookList[inputBook] = 1
-    
-tmp = [k for k,v in soldBookList.items() if max(soldBookList.values()) == v]
+    soldBooks[bookname] = 1
+  tmp = []
+
+for k,v in soldBooks.items():
+  if max(soldBooks.values()) == v:
+    tmp.append(k)
 tmp.sort()
 print(tmp[0])

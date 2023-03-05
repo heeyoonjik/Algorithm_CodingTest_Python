@@ -1,15 +1,17 @@
-repeatTime = int(input())
+import sys
+input = sys.stdin.readline
 
-for _ in range(repeatTime):
+for _ in range(int(input())):
   stack = []
-  isVps = "YES"
-  for inputCharacter in input():
-    if(inputCharacter == '('):
-      stack.append('(')
-    elif(len(stack)<1):
-      isVps = "NO"
-    else:
-      stack.pop()
+  isVPS = 'YES'
+  for psCharacter in input():
+    if(psCharacter == '('):
+      stack.append(psCharacter)
+    elif(psCharacter == ')'):
+      if stack:
+        stack.pop()
+      else:
+        isVPS = 'NO'
   if stack:
-    isVps = "NO"
-  print(isVps)
+    isVPS = 'NO'
+  print(isVPS)

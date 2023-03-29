@@ -10,8 +10,6 @@ def judgment():
     if(trophySize[i]>maxSize):
       maxSize = trophySize[i]
       answer +=1
-    else:
-      continue
   print(answer)
 
 judgment()
